@@ -15,3 +15,5 @@
 ## 四、生成镜像
 + cd到各服务子目录也就是pom.xml所在目录，运行：
 ####  `mvn clean package docker:build`
+## 五、jwt加解密可访问
++ https://www.jsonwebtoken.io/
