@@ -3,7 +3,7 @@
 + cd到docker/common子目录运行：
 ####  `docker-compose up`
 ## 二、部署的服务有：
-![img.png](img.png)
+![img.png](https://github.com/tzs919/distributed-system-example/blob/master/img.png)
 ## 三、curl调用的例子
 + 访问Oauth2服务器，用户认证，获得访问token：
 ####  `curl  eagleeye:thisissecret@localhost:8901/auth/oauth/token -d grant_type=password -client_id=eagleeye  -d scope=webclient -d username=john.carnell -d password=password1`
