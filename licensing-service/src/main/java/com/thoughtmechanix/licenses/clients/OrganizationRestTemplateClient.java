@@ -17,7 +17,7 @@ public class OrganizationRestTemplateClient {
 
     private static final Logger logger = LoggerFactory.getLogger(OrganizationRestTemplateClient.class);
 
-    public Organization getOrganization(String organizationId){
+    public Organization getOrganization(String organizationId) {
         logger.debug("In Licensing Service.getOrganization: {}", UserContext.getCorrelationId());
 
         ResponseEntity<Organization> restExchange =
@@ -25,6 +25,10 @@ public class OrganizationRestTemplateClient {
                         "http://zuulserver:5555/api/organization/v1/organizations/{organizationId}",
                         HttpMethod.GET,
                         null, Organization.class, organizationId);
+
+//        Organization organization = restTemplate.getForObject(
+//                "http://zuulserver:5555/api/organization/v1/organizations/{organizationId}",
+//                Organization.class, organizationId);
 
         return restExchange.getBody();
     }
