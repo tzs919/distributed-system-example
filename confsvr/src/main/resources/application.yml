@@ -10,34 +10,35 @@
 
 
 ####################################
-server:
-  port: 8888
-spring:
-  cloud:
-    config:
-      discovery:
-        enabled: true
-      server:
-        encrypt.enabled: false
-        git:
-          uri: https://github.com/tzs919/config-repo
-          searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice,authenticationservice
+#server:
+#  port: 8888
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#      server:
+#        encrypt.enabled: false
+#        git:
+#          uri: https://github.com/tzs919/config-repo
+#          searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice,authenticationservice
 
 
 ####
 #Classpath and file-based solution
 ####
 #
-#server:
-#   port: 8888
-#spring:
-##  profiles:
-##    active: native
-#  cloud:
-#     config:
-#       server:
-#           native:
-#              searchLocations: classpath:config,classpath:config/licensingservice,classpath:config/organizationservice,classpath:config/specialroutesservice,classpath:config/zuulservice,classpath:config/authenticationservice
+server:
+   port: 8888
+spring:
+  profiles:
+    active: native
+  cloud:
+     config:
+       server:
+         encrypt.enabled: true
+         native:
+            searchLocations: classpath:config/licensingservice,classpath:config/organizationservice,classpath:config/specialroutesservice,classpath:config/zuulservice,classpath:config/authenticationservice
 
 #Setting logging levels
 logging:
